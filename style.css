@@ -148,6 +148,7 @@ body .content .entry .body {
 
 body .content .entry .body p {
   line-height: 1.4em;
+  text-align: justify;
 }
 
 body .content .entry .body img {
@@ -169,30 +170,64 @@ body .content .entry:nth-child(2n) .year.big:before {
           transform: translate(-8px, -50%);
 }
 
-.references, .project-team {
+.quote-block {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  font-family: "Georgia", serif;
+  font-size: 1.8em;
+  color: #ffffff;
+  position: relative;
+}
+
+.quote-block::before {
+  content: "“";
+  font-size: 3em;
+  color: #ffffff;
+  position: relative;
+  left: 10px;
+  top: -20px;
+}
+
+.quote-author {
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+  color: #c0bfbf;
+}
+
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px 0;
-  color: white;
+  justify-content: space-between; /* Распределяет объекты с пространством между ними */
+  align-items: center; /* Выровнять элементы по верху */
+  gap: 20px; /* Отступ между секциями */
+  padding: 20px;
+}
+
+.references, .project-team {
+  flex: 1; /* Равномерное распределение ширины */
+  max-width: 40%; /* Ограничение ширины */
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* Содержимое располагается вертикально */
+  justify-content: center; /* Центрирование содержимого по вертикали */
+  align-items: center; /* Центрирование содержимого по горизонтали */
+  text-align: left;
 }
 
 .references h2, .project-team h2 {
   color: white;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 1.5em;
 }
 
-.references ul{
-  list-style: none;
-  padding: 0;
-  text-align: left;
+.references ol{
+  color: white;
 }
 
 .project-team ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
+  color: white;
+  padding-left: 20px;
 }
 
 .references li, .project-team li {
